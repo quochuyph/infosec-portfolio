@@ -196,12 +196,16 @@ function initCyberTerminal() {
 [+] <span class="purple">Systems & Infra</span>    : Linux (Kali, Ubuntu, Arch), Docker, Windows Security, Git
 [+] <span class="purple">Domains</span>            : Web Sec, Network Defense, CTF Solving, Threat Analysis`,
 
-    projects: () => `📁 <span class="cyan">KEY PROJECTS & RESEARCH</span>
+    projects: () => `📁 <span class="cyan">PROJECTS & SECURITY RESEARCH STATUS</span>
 --------------------------------------------------
-1. <span class="green">Network Packet Analyzer</span> [Python/Scapy] - Real-time traffic inspection & anomaly detection
-2. <span class="green">Automated Web Vulnerability Scanner</span> [Python] - Tests for XSS, SQLi & Header misconfigurations
-3. <span class="green">CTF Writeups & Security Labs</span> [Markdown/GitHub] - Detailed writeups on HackTheBox & CTF challenges
-4. <span class="green">Bio & Security Portfolio</span> [HTML/CSS/JS] - Modern glassmorphic cybersecurity identity page`,
+[⚡] <span class="amber">TRẠNG THÁI: ĐANG NGHIÊN CỨU & THỰC HIỆN DỰ ÁN</span>
+[+] Hiện tại các dự án bảo mật, công cụ an ninh mạng và bài viết CTF writeup đang được tập trung nghiên cứu, phát triển và thử nghiệm.
+[+] Các dự án sẽ sớm được công bố mã nguồn mở & demo trên GitHub:
+    1. <span class="cyan">Network Packet Sniffer & Analyzer</span> (Scapy/Python)
+    2. <span class="cyan">Automated Web Vulnerability Scanner</span> (OWASP Labs)
+    3. <span class="cyan">CTF Writeups & Security Labs Repository</span>
+    4. <span class="cyan">Reverse Engineering & Binary Analysis Labs</span>
+[+] Theo dõi tiến độ tại: <a href="https://github.com/quochuyph" target="_blank" class="green">github.com/quochuyph</a>`,
 
     contact: () => `📫 <span class="cyan">COMMUNICATION CHANNELS</span>
 --------------------------------------------------
