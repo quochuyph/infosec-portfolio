@@ -1,1214 +1,642 @@
 <!DOCTYPE html>
-
-
-
 <html lang="vi">
 
-
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Trần Quốc Huy - Trang Thông Tin Cá Nhân</title>
-
-
-
-        <div class="snowflake">❅</div>
-
-        <div class="snowflake">❆</div>
-
-        <div class="snowflake">☢</div>
-
-        <div class="snowflake">❆</div>
-
-        <div class="snowflake">✡</div>
-
-        <div class="snowflake">☪</div>
-
-        <div class="snowflake">❅</div>
-
-        <div class="snowflake">☪</div>
-
-        <div class="snowflake">☢</div>
-
-        <div class="snowflake">✡</div>
-
-        <div class="snowflake">❅</div>
-
-        <div class="snowflake">☪</div>
-
-    </div>
-
-    <style>
-
-        @-webkit-keyframes snowflakes-fall {
-
-            0% {
-
-                top: -10%
-
-            }
-
-            100% {
-
-                top: 100%
-
-            }
-
-        }
-
-        
-
-        @-webkit-keyframes snowflakes-shake {
-
-            0%,
-
-            100% {
-
-                -webkit-transform: translateX(0);
-
-                transform: translateX(0)
-
-            }
-
-            50% {
-
-                -webkit-transform: translateX(80px);
-
-                transform: translateX(80px)
-
-            }
-
-        }
-
-        
-
-        @keyframes snowflakes-fall {
-
-            0% {
-
-                top: -10%
-
-            }
-
-            100% {
-
-                top: 100%
-
-            }
-
-        }
-
-        
-
-        @keyframes snowflakes-shake {
-
-            0%,
-
-            100% {
-
-                transform: translateX(0)
-
-            }
-
-            50% {
-
-                transform: translateX(80px)
-
-            }
-
-        }
-
-        
-
-        .snowflake {
-
-            color: #fff;
-
-            font-size: 1em;
-
-            font-family: Arial, sans-serif;
-
-            text-shadow: 0 0 5px #000;
-
-            position: fixed;
-
-            top: -10%;
-
-            z-index: 9999;
-
-            -webkit-user-select: none;
-
-            -moz-user-select: none;
-
-            -ms-user-select: none;
-
-            user-select: none;
-
-            cursor: default;
-
-            -webkit-animation-name: snowflakes-fall, snowflakes-shake;
-
-            -webkit-animation-duration: 10s, 3s;
-
-            -webkit-animation-timing-function: linear, ease-in-out;
-
-            -webkit-animation-iteration-count: infinite, infinite;
-
-            -webkit-animation-play-state: running, running;
-
-            animation-name: snowflakes-fall, snowflakes-shake;
-
-            animation-duration: 10s, 3s;
-
-            animation-timing-function: linear, ease-in-out;
-
-            animation-iteration-count: infinite, infinite;
-
-            animation-play-state: running, running;
-
-        }
-
-        
-
-        .snowflake:nth-of-type(0) {
-
-            left: 1%;
-
-            -webkit-animation-delay: 0s, 0s;
-
-            animation-delay: 0s, 0s
-
-        }
-
-        
-
-        .snowflake:nth-of-type(1) {
-
-            left: 10%;
-
-            -webkit-animation-delay: 1s, 1s;
-
-            animation-delay: 1s, 1s
-
-        }
-
-        
-
-        .snowflake:nth-of-type(2) {
-
-            left: 20%;
-
-            -webkit-animation-delay: 6s, .5s;
-
-            animation-delay: 6s, .5s
-
-        }
-
-        
-
-        .snowflake:nth-of-type(3) {
-
-            left: 30%;
-
-            -webkit-animation-delay: 4s, 2s;
-
-            animation-delay: 4s, 2s
-
-        }
-
-        
-
-        .snowflake:nth-of-type(4) {
-
-            left: 40%;
-
-            -webkit-animation-delay: 2s, 2s;
-
-            animation-delay: 2s, 2s
-
-        }
-
-        
-
-        .snowflake:nth-of-type(5) {
-
-            left: 50%;
-
-            -webkit-animation-delay: 8s, 3s;
-
-            animation-delay: 8s, 3s
-
-        }
-
-        
-
-        .snowflake:nth-of-type(6) {
-
-            left: 60%;
-
-            -webkit-animation-delay: 6s, 2s;
-
-            animation-delay: 6s, 2s
-
-        }
-
-        
-
-        .snowflake:nth-of-type(7) {
-
-            left: 70%;
-
-            -webkit-animation-delay: 2.5s, 1s;
-
-            animation-delay: 2.5s, 1s
-
-        }
-
-        
-
-        .snowflake:nth-of-type(8) {
-
-            left: 80%;
-
-            -webkit-animation-delay: 1s, 0s;
-
-            animation-delay: 1s, 0s
-
-        }
-
-        
-
-        .snowflake:nth-of-type(9) {
-
-            left: 90%;
-
-            -webkit-animation-delay: 3s, 1.5s;
-
-            animation-delay: 3s, 1.5s
-
-        }
-
-        
-
-        .snowflake:nth-of-type(10) {
-
-            left: 25%;
-
-            -webkit-animation-delay: 2s, 0s;
-
-            animation-delay: 2s, 0s
-
-        }
-
-        
-
-        .snowflake:nth-of-type(11) {
-
-            left: 65%;
-
-            -webkit-animation-delay: 4s, 2.5s;
-
-            animation-delay: 4s, 2.5s
-
-        }
-
-    </style>
-
-
-
-    <body>
-
-        <script type='text/javascript'>
-
-            ! function(e, t, a) {
-
-                function n() {
-
-                    c(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}"), o(), r()
-
-                }
-
-
-
-                function r() {
-
-                    for (var e = 0; e < d.length; e++) d[e].alpha <= 0 ? (t.body.removeChild(d[e].el), d.splice(e, 1)) : (d[e].y--, d[e].scale += .004, d[e].alpha -= .013, d[e].el.style.cssText = "left:" + d[e].x + "px;top:" + d[e].y + "px;opacity:" + d[e].alpha + ";transform:scale(" + d[e].scale + "," + d[e].scale + ") rotate(45deg);background:" + d[e].color + ";z-index:99999");
-
-                    requestAnimationFrame(r)
-
-                }
-
-
-
-                function o() {
-
-                    var t = "function" == typeof e.onclick && e.onclick;
-
-                    e.onclick = function(e) {
-
-                        t && t(), i(e)
-
-                    }
-
-                }
-
-
-
-                function i(e) {
-
-                    var a = t.createElement("div");
-
-                    a.className = "heart", d.push({
-
-                        el: a,
-
-                        x: e.clientX - 5,
-
-                        y: e.clientY - 5,
-
-                        scale: 1,
-
-                        alpha: 1,
-
-                        color: s()
-
-                    }), t.body.appendChild(a)
-
-                }
-
-
-
-                function c(e) {
-
-                    var a = t.createElement("style");
-
-                    a.type = "text/css";
-
-                    try {
-
-                        a.appendChild(t.createTextNode(e))
-
-                    } catch (t) {
-
-                        a.styleSheet.cssText = e
-
-                    }
-
-                    t.getElementsByTagName("head")[0].appendChild(a)
-
-                }
-
-
-
-                function s() {
-
-                    return "rgb(" + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + ")"
-
-                }
-
-                var d = [];
-
-                e.requestAnimationFrame = function() {
-
-                    return e.requestAnimationFrame || e.webkitRequestAnimationFrame || e.mozRequestAnimationFrame || e.oRequestAnimationFrame || e.msRequestAnimationFrame || function(e) {
-
-                        setTimeout(e, 1e3 / 60)
-
-                    }
-
-                }(), n()
-
-            }(window, document);
-
-        </script>
-
-        <script language="JavaScript">
-
-            window.onload = function() {
-
-                document.addEventListener("contextmenu", function(e) {
-
-                    e.preventDefault();
-
-                }, false);
-
-                document.addEventListener("keydown", function(e) {
-
-                    //document.onkeydown = function(e) {
-
-                    // "I" key
-
-                    if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
-
-                        disabledEvent(e);
-
-                    }
-
-                    // "J" key
-
-                    if (e.ctrlKey && e.shiftKey && e.keyCode == 74) {
-
-                        disabledEvent(e);
-
-                    }
-
-                    // "S" key + macOS
-
-                    if (e.keyCode == 83 && (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)) {
-
-                        disabledEvent(e);
-
-                    }
-
-                    // "U" key
-
-                    if (e.ctrlKey && e.keyCode == 85) {
-
-                        disabledEvent(e);
-
-                    }
-
-                    // "F12" key
-
-                    if (event.keyCode == 123) {
-
-                        disabledEvent(e);
-
-                    }
-
-                }, false);
-
-
-
-                function disabledEvent(e) {
-
-                    if (e.stopPropagation) {
-
-                        e.stopPropagation();
-
-                    } else if (window.event) {
-
-                        window.event.cancelBubble = true;
-
-                    }
-
-                    e.preventDefault();
-
-                    return false;
-
-                }
-
-            };
-
-        </script>
-
-        <script type='text/javascript'>
-
-            //<![CDATA[
-
-            shortcut = {
-
-                all_shortcuts: {},
-
-                add: function(a, b, c) {
-
-                    var d = {
-
-                        type: "keydown",
-
-                        propagate: !1,
-
-                        disable_in_input: !1,
-
-                        target: document,
-
-                        keycode: !1
-
-                    };
-
-                    if (c)
-
-                        for (var e in d) "undefined" == typeof c[e] && (c[e] = d[e]);
-
-                    else c = d;
-
-                    d = c.target, "string" == typeof c.target && (d = document.getElementById(c.target)), a = a.toLowerCase(), e = function(d) {
-
-                        d = d || window.event;
-
-                        if (c.disable_in_input) {
-
-                            var e;
-
-                            d.target ? e = d.target : d.srcElement && (e = d.srcElement), 3 == e.nodeType && (e = e.parentNode);
-
-                            if ("INPUT" == e.tagName || "TEXTAREA" == e.tagName) return
-
-                        }
-
-                        d.keyCode ? code = d.keyCode : d.which && (code = d.which), e = String.fromCharCode(code).toLowerCase(), 188 == code && (e = ","), 190 == code && (e = ".");
-
-                        var f = a.split("+"),
-
-                            g = 0,
-
-                            h = {
-
-                                "`": "~",
-
-                                1: "!",
-
-                                2: "@",
-
-                                3: "#",
-
-                                4: "$",
-
-                                5: "%",
-
-                                6: "^",
-
-                                7: "&",
-
-                                8: "*",
-
-                                9: "(",
-
-                                0: ")",
-
-                                "-": "_",
-
-                                "=": "+",
-
-                                ";": ":",
-
-                                "'": '"',
-
-                                ",": "<",
-
-                                ".": ">",
-
-                                "/": "?",
-
-                                "\\": "|"
-
-                            },
-
-                            i = {
-
-                                esc: 27,
-
-                                escape: 27,
-
-                                tab: 9,
-
-                                space: 32,
-
-                                "return": 13,
-
-                                enter: 13,
-
-                                backspace: 8,
-
-                                scrolllock: 145,
-
-                                scroll_lock: 145,
-
-                                scroll: 145,
-
-                                capslock: 20,
-
-                                caps_lock: 20,
-
-                                caps: 20,
-
-                                numlock: 144,
-
-                                num_lock: 144,
-
-                                num: 144,
-
-                                pause: 19,
-
-                                "break": 19,
-
-                                insert: 45,
-
-                                home: 36,
-
-                                "delete": 46,
-
-                                end: 35,
-
-                                pageup: 33,
-
-                                page_up: 33,
-
-                                pu: 33,
-
-                                pagedown: 34,
-
-                                page_down: 34,
-
-                                pd: 34,
-
-                                left: 37,
-
-                                up: 38,
-
-                                right: 39,
-
-                                down: 40,
-
-                                f1: 112,
-
-                                f2: 113,
-
-                                f3: 114,
-
-                                f4: 115,
-
-                                f5: 116,
-
-                                f6: 117,
-
-                                f7: 118,
-
-                                f8: 119,
-
-                                f9: 120,
-
-                                f10: 121,
-
-                                f11: 122,
-
-                                f12: 123
-
-                            },
-
-                            j = !1,
-
-                            l = !1,
-
-                            m = !1,
-
-                            n = !1,
-
-                            o = !1,
-
-                            p = !1,
-
-                            q = !1,
-
-                            r = !1;
-
-                        d.ctrlKey && (n = !0), d.shiftKey && (l = !0), d.altKey && (p = !0), d.metaKey && (r = !0);
-
-                        for (var s = 0; k = f[s], s < f.length; s++) "ctrl" == k || "control" == k ? (g++, m = !0) : "shift" == k ? (g++, j = !0) : "alt" == k ? (g++, o = !0) : "meta" == k ? (g++, q = !0) : 1 < k.length ? i[k] == code && g++ : c.keycode ? c.keycode == code && g++ : e == k ? g++ : h[e] && d.shiftKey && (e = h[e], e == k && g++);
-
-                        if (g == f.length && n == m && l == j && p == o && r == q && (b(d), !c.propagate)) return d.cancelBubble = !0, d.returnValue = !1, d.stopPropagation && (d.stopPropagation(), d.preventDefault()), !1
-
-                    }, this.all_shortcuts[a] = {
-
-                        callback: e,
-
-                        target: d,
-
-                        event: c.type
-
-                    }, d.addEventListener ? d.addEventListener(c.type, e, !1) : d.attachEvent ? d.attachEvent("on" + c.type, e) : d["on" + c.type] = e
-
-                },
-
-                remove: function(a) {
-
-                    var a = a.toLowerCase(),
-
-                        b = this.all_shortcuts[a];
-
-                    delete this.all_shortcuts[a];
-
-                    if (b) {
-
-                        var a = b.event,
-
-                            c = b.target,
-
-                            b = b.callback;
-
-                        c.detachEvent ? c.detachEvent("on" + a, b) : c.removeEventListener ? c.removeEventListener(a, b, !1) : c["on" + a] = !1
-
-                    }
-
-                }
-
-            }, shortcut.add("Ctrl+U", function() {
-
-                alert('Xem Source Code Làm Gì Bạn Ey :"))')
-
-            }), shortcut.add("F12", function() {
-
-                alert('Tính Coi Gì Vậy Bạn :"))')
-
-            }), shortcut.add("Ctrl+Shift+I", function() {
-
-                alert('Không được đâu ahihi :"))')
-
-            }), shortcut.add("Ctrl+S", function() {
-
-                alert('Lưu cái gì thế lị :"))')
-
-            }), shortcut.add("Ctrl+Shift+C", function() {
-
-                alert('Tính Làm Gì Vậy Bạn :"))')
-
-            });
-
-            //]]>
-
-        </script>
-
-
-
-
-
-        <!-- Meta Data -->
-
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-        <meta name="format-detection" content="telephone=no">
-
-        <meta name="format-detection" content="address=no">
-
-        <meta name="author" content="Trần Quốc Huy">
-
-
-
-
-
-
-
-        <!-- Favicons -->
-
-        <link href='https://1.bp.blogspot.com/-hgQuQLjKWiM/YKytpXcsa6I/AAAAAAAAFiU/j3Ixpn1632M_SuCVcgvFY01Vxg5gV2EdwCLcBGAsYHQ/s16000/favicon-1000x1000.png' rel='shortcut icon' type='image/x-icon'/>
-
-
-
-        <!-- Styles -->
-
-        <link rel="stylesheet" href="cc.css">
-
-
-
-        <link rel="stylesheet" type="text/css" href="assets/styles/style.css">
-
-        <link rel="stylesheet" type="text/css" href="assets/styles/style-dark.css">
-
-        <link rel="stylesheet" type="text/css" href="assets/demo/style-demo.css">
-
-
-
-
-
-
-
-    </body>
-
+    <!-- Primary Meta Tags -->
+    <title>Trần Quốc Huy (@quochuyph) | Information Security Student @ HCMUTE</title>
+    <meta name="title" content="Trần Quốc Huy (@quochuyph) | Information Security Student @ HCMUTE">
+    <meta name="description" content="Trang cá nhân & Bio của Trần Quốc Huy - Sinh viên ngành An toàn Thông tin tại Trường Đại học Sư phạm Kỹ thuật TP.HCM (HCMUTE). Đam mê Web Pentest, Network Security & CTF.">
+    <meta name="author" content="Trần Quốc Huy">
+    <meta name="keywords" content="Trần Quốc Huy, quochuyph, williamtran207, HCMUTE, An toàn thông tin, Cybersecurity, Information Security, Portfolio">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://github.com/quochuyph">
+    <meta property="og:title" content="Trần Quốc Huy | Information Security @ HCMUTE">
+    <meta property="og:description" content="Khám phá hồ sơ cá nhân, kỹ năng bảo mật, dự án và thông tin liên hệ của Trần Quốc Huy.">
+    <meta property="og:image" content="./img/avatar.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="./img/avatar.jpg">
+
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Cyber Stylesheet -->
+    <link rel="stylesheet" href="assets/css/cyber-style.css">
 </head>
 
-
-
 <body>
+    <!-- Background Ambient Effects & Interactive Canvas -->
+    <canvas id="cyber-canvas"></canvas>
+    <div class="ambient-glow-1"></div>
+    <div class="ambient-glow-2"></div>
+    <div class="cyber-grid-overlay"></div>
+
+    <!-- Main Container Wrapper -->
+    <div class="site-wrapper">
+
+        <!-- =================================================================
+             1. HERO PROFILE CARD
+             ================================================================= -->
+        <header class="glass-card hero-card">
+            <div class="hero-grid">
+                <!-- Avatar with Pulse Effect & Live Status -->
+                <div class="avatar-container">
+                    <div class="avatar-wrapper">
+                        <div class="avatar-pulse-ring"></div>
+                        <img class="avatar-img" src="./img/avatar.jpg" alt="Trần Quốc Huy Avatar">
+                        <div class="status-badge" title="Sẵn sàng tham gia CTF & Nghiên cứu bảo mật">
+                            <span class="status-dot"></span>
+                            <span>CTF & Research Ready</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bio Info & Identity -->
+                <div class="hero-content">
+                    <div class="hero-tags">
+                        <span class="hero-pill pill-cyber"><i class="fa-solid fa-shield-halved"></i> An Toàn Thông Tin</span>
+                        <span class="hero-pill pill-hcmute"><i class="fa-solid fa-graduation-cap"></i> HCMUTE Student</span>
+                        <span class="hero-pill pill-sec"><i class="fa-solid fa-bug"></i> Security Enthusiast</span>
+                    </div>
+
+                    <h1 class="hero-name">Trần Quốc Huy</h1>
+                    <div class="hero-handle">
+                        <span>@quochuyph</span> • <span>williamtran207</span>
+                    </div>
+
+                    <p class="hero-bio">
+                        Sinh viên chuyên ngành <b>An toàn Thông tin</b> tại <b>Trường ĐH Sư phạm Kỹ thuật TP.HCM (HCMUTE)</b>. 
+                        Đam mê nghiên cứu <i>Web Application Security</i>, <i>Network Defense</i>, <i>Penetration Testing</i>, <i>Cryptography</i> và phát triển phần mềm bảo mật.
+                    </p>
+
+                    <!-- Quick Action Buttons -->
+                    <div class="hero-actions">
+                        <a href="mailto:quochuyphbrvt@gmail.com" class="btn btn-primary">
+                            <i class="fa-solid fa-paper-plane"></i> Liên Hệ Trực Tiếp
+                        </a>
+                        <button class="btn btn-glass" data-copy="quochuyphbrvt@gmail.com" data-copy-label="Email">
+                            <i class="fa-solid fa-copy"></i> Copy Email
+                        </button>
+                        <button class="btn btn-glass" data-modal-target="pgp-modal">
+                            <i class="fa-solid fa-key"></i> Khóa PGP / Key
+                        </button>
+                        <a href="https://github.com/quochuyph" target="_blank" rel="noopener noreferrer" class="btn btn-glass">
+                            <i class="fa-brands fa-github"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
 
 
-
-    <!-- Preloader -->
-
-    <div class="preloader">
-
-        <div class="preloader__wrap">
-
-            <div class="circle-pulse">
-
-                <div class="circle-pulse__1"></div>
-
-                <div class="circle-pulse__2"></div>
-
+        <!-- =================================================================
+             2. INTERACTIVE MINI CYBER TERMINAL
+             ================================================================= -->
+        <section class="terminal-card">
+            <div class="terminal-header">
+                <div class="terminal-controls">
+                    <span class="terminal-dot dot-red"></span>
+                    <span class="terminal-dot dot-yellow"></span>
+                    <span class="terminal-dot dot-green"></span>
+                </div>
+                <div class="terminal-title">
+                    <i class="fa-solid fa-terminal"></i> quochuy@hcmute-sec: ~ (zsh)
+                </div>
+                <div class="terminal-actions-top">
+                    <button class="terminal-btn-icon" id="term-clear-btn" title="Xóa màn hình terminal">
+                        <i class="fa-solid fa-eraser"></i> Clear
+                    </button>
+                </div>
             </div>
 
-            <div class="preloader__progress"><span></span></div>
+            <div class="terminal-body">
+                <div class="terminal-history" id="terminal-history">
+                    <div class="terminal-line">
+                        <span class="terminal-output cyan">
+╔════════════════════════════════════════════════════════════════════╗
+║  [+] Welcome to Quoc Huy's CyberSec Interactive Shell v2.4        ║
+║  [+] Type '<span class="green">help</span>' or click quick tags below to explore system info.   ║
+╚════════════════════════════════════════════════════════════════════╝
+                        </span>
+                    </div>
+                </div>
 
-        </div>
+                <div class="terminal-input-row">
+                    <span class="terminal-prompt-prefix"><span class="terminal-prompt-user">visitor</span><span class="muted">@</span><span class="terminal-prompt-path">quochuy-sec:~$</span></span>
+                    <input type="text" id="terminal-input" class="terminal-input" placeholder="nhập lệnh (ví dụ: whoami, skills, education)..." autocomplete="off" spellcheck="false">
+                </div>
+            </div>
+
+            <!-- Quick Terminal Command Pills -->
+            <div class="terminal-quick-chips">
+                <span class="quick-chip-label"><i class="fa-solid fa-bolt"></i> Gợi ý lệnh nhanh:</span>
+                <button class="quick-chip" data-cmd="whoami">whoami</button>
+                <button class="quick-chip" data-cmd="education">education</button>
+                <button class="quick-chip" data-cmd="skills">skills</button>
+                <button class="quick-chip" data-cmd="projects">projects</button>
+                <button class="quick-chip" data-cmd="contact">contact</button>
+                <button class="quick-chip" data-cmd="pgp">pgp</button>
+                <button class="quick-chip" data-cmd="matrix">matrix</button>
+                <button class="quick-chip" data-cmd="help">help</button>
+            </div>
+        </section>
+
+
+        <!-- =================================================================
+             3. ACADEMIC & EDUCATION SECTION (HCMUTE)
+             ================================================================= -->
+        <section class="glass-card hcmute-card">
+            <div class="section-header">
+                <div class="section-title-wrap">
+                    <div class="section-icon-badge">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <h2 class="section-title">
+                        Học Vấn & Chuyên Ngành
+                        <span class="title-tag">HCMUTE</span>
+                    </h2>
+                </div>
+            </div>
+
+            <div class="education-layout">
+                <div class="edu-badge-icon">
+                    <i class="fa-solid fa-university"></i>
+                </div>
+
+                <div class="edu-details">
+                    <h3>Trường Đại học Sư phạm Kỹ thuật TP. Hồ Chí Minh</h3>
+                    <div class="edu-meta">
+                        <span><i class="fa-solid fa-building-columns"></i> Khoa Công nghệ Thông tin (Faculty of IT)</span>
+                        <span>•</span>
+                        <span><i class="fa-solid fa-user-shield"></i> Chuyên ngành: <b>An toàn Thông tin (Information Security)</b></span>
+                    </div>
+                    <p>
+                        Đào tạo chuyên sâu về bảo mật hệ thống mạng, thẩm định an ninh ứng dụng web & phần mềm, điều tra số (Forensics), mật mã học và kiểm thử thâm nhập (Penetration Testing).
+                    </p>
+
+                    <div class="edu-tags">
+                        <span class="edu-tag-item"><i class="fa-solid fa-lock"></i> Mật mã học</span>
+                        <span class="edu-tag-item"><i class="fa-solid fa-network-wired"></i> An toàn mạng</span>
+                        <span class="edu-tag-item"><i class="fa-solid fa-bug"></i> Kiểm thử xâm nhập</span>
+                        <span class="edu-tag-item"><i class="fa-brands fa-linux"></i> Linux & Hệ thống</span>
+                        <span class="edu-tag-item"><i class="fa-solid fa-code"></i> Lập trình an toàn</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- =================================================================
+             4. TECHNICAL & CYBERSECURITY SKILLS MATRIX
+             ================================================================= -->
+        <section class="glass-card">
+            <div class="section-header">
+                <div class="section-title-wrap">
+                    <div class="section-icon-badge">
+                        <i class="fa-solid fa-shield-virus"></i>
+                    </div>
+                    <h2 class="section-title">
+                        Kỹ Năng Kỹ Thuật & Công Cụ Bảo Mật
+                        <span class="title-tag">Skill Matrix</span>
+                    </h2>
+                </div>
+                <p class="section-sub">Các công cụ, ngôn ngữ và nền tảng kỹ thuật trọng tâm trong lĩnh vực An toàn Thông tin.</p>
+            </div>
+
+            <div class="skills-grid">
+                <!-- 1. Security & Pentest -->
+                <div class="skill-category-card">
+                    <div class="skill-cat-header">
+                        <div class="skill-cat-icon icon-cyan">
+                            <i class="fa-solid fa-crosshairs"></i>
+                        </div>
+                        <h3 class="skill-cat-title">Bảo Mật & Pentest</h3>
+                    </div>
+                    <div class="skill-pill-list">
+                        <span class="skill-pill"><i class="fa-solid fa-check"></i> Burp Suite</span>
+                        <span class="skill-pill"><i class="fa-solid fa-check"></i> Wireshark</span>
+                        <span class="skill-pill"><i class="fa-solid fa-check"></i> Nmap</span>
+                        <span class="skill-pill"><i class="fa-solid fa-check"></i> Metasploit</span>
+                        <span class="skill-pill"><i class="fa-solid fa-check"></i> OWASP Top 10</span>
+                        <span class="skill-pill"><i class="fa-solid fa-check"></i> Ghidra</span>
+                        <span class="skill-pill"><i class="fa-solid fa-check"></i> SQLMap</span>
+                    </div>
+                </div>
+
+                <!-- 2. Programming & Scripting -->
+                <div class="skill-category-card">
+                    <div class="skill-cat-header">
+                        <div class="skill-cat-icon icon-blue">
+                            <i class="fa-solid fa-code"></i>
+                        </div>
+                        <h3 class="skill-cat-title">Lập Trình & Scripting</h3>
+                    </div>
+                    <div class="skill-pill-list">
+                        <span class="skill-pill"><i class="fa-brands fa-python"></i> Python</span>
+                        <span class="skill-pill"><i class="fa-solid fa-terminal"></i> Bash / Shell</span>
+                        <span class="skill-pill"><i class="fa-solid fa-c"></i> C / C++</span>
+                        <span class="skill-pill"><i class="fa-brands fa-js"></i> JavaScript</span>
+                        <span class="skill-pill"><i class="fa-solid fa-database"></i> SQL</span>
+                        <span class="skill-pill"><i class="fa-brands fa-html5"></i> HTML5/CSS3</span>
+                    </div>
+                </div>
+
+                <!-- 3. Systems & Infra -->
+                <div class="skill-category-card">
+                    <div class="skill-cat-header">
+                        <div class="skill-cat-icon icon-purple">
+                            <i class="fa-solid fa-server"></i>
+                        </div>
+                        <h3 class="skill-cat-title">Hệ Thống & OS</h3>
+                    </div>
+                    <div class="skill-pill-list">
+                        <span class="skill-pill"><i class="fa-brands fa-linux"></i> Kali Linux</span>
+                        <span class="skill-pill"><i class="fa-brands fa-ubuntu"></i> Ubuntu Server</span>
+                        <span class="skill-pill"><i class="fa-brands fa-docker"></i> Docker</span>
+                        <span class="skill-pill"><i class="fa-brands fa-windows"></i> Windows Security</span>
+                        <span class="skill-pill"><i class="fa-brands fa-git-alt"></i> Git & GitHub</span>
+                    </div>
+                </div>
+
+                <!-- 4. Domains & Specializations -->
+                <div class="skill-category-card">
+                    <div class="skill-cat-header">
+                        <div class="skill-cat-icon icon-emerald">
+                            <i class="fa-solid fa-network-wired"></i>
+                        </div>
+                        <h3 class="skill-cat-title">Lĩnh Vực Trọng Tâm</h3>
+                    </div>
+                    <div class="skill-pill-list">
+                        <span class="skill-pill"><i class="fa-solid fa-globe"></i> Web Security</span>
+                        <span class="skill-pill"><i class="fa-solid fa-shield"></i> Network Defense</span>
+                        <span class="skill-pill"><i class="fa-solid fa-key"></i> Cryptography</span>
+                        <span class="skill-pill"><i class="fa-solid fa-flag"></i> CTF Challenges</span>
+                        <span class="skill-pill"><i class="fa-solid fa-magnifying-glass"></i> Forensics</span>
+                    </div>
+                </div>
+
+                <!-- 5. Network & Protocols -->
+                <div class="skill-category-card">
+                    <div class="skill-cat-header">
+                        <div class="skill-cat-icon icon-amber">
+                            <i class="fa-solid fa-diagram-project"></i>
+                        </div>
+                        <h3 class="skill-cat-title">Mạng & Giao Thức</h3>
+                    </div>
+                    <div class="skill-pill-list">
+                        <span class="skill-pill"><i class="fa-solid fa-hashtag"></i> TCP/IP Model</span>
+                        <span class="skill-pill"><i class="fa-solid fa-hashtag"></i> OSI 7 Layers</span>
+                        <span class="skill-pill"><i class="fa-solid fa-hashtag"></i> DNS / DHCP</span>
+                        <span class="skill-pill"><i class="fa-solid fa-hashtag"></i> HTTP / HTTPS / SSL</span>
+                        <span class="skill-pill"><i class="fa-solid fa-hashtag"></i> Firewall & NAT</span>
+                    </div>
+                </div>
+
+                <!-- 6. Soft Skills & Research -->
+                <div class="skill-category-card">
+                    <div class="skill-cat-header">
+                        <div class="skill-cat-icon icon-rose">
+                            <i class="fa-solid fa-lightbulb"></i>
+                        </div>
+                        <h3 class="skill-cat-title">Kỹ Năng Bổ Trợ</h3>
+                    </div>
+                    <div class="skill-pill-list">
+                        <span class="skill-pill"><i class="fa-solid fa-book"></i> Đọc tài liệu Eng</span>
+                        <span class="skill-pill"><i class="fa-solid fa-pen-nib"></i> Viết CTF Writeups</span>
+                        <span class="skill-pill"><i class="fa-solid fa-puzzle-piece"></i> Problem Solving</span>
+                        <span class="skill-pill"><i class="fa-solid fa-users"></i> Teamwork</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- =================================================================
+             5. PROJECTS & SECURITY RESEARCH SHOWCASE
+             ================================================================= -->
+        <section class="glass-card">
+            <div class="section-header">
+                <div class="section-title-wrap">
+                    <div class="section-icon-badge">
+                        <i class="fa-solid fa-folder-open"></i>
+                    </div>
+                    <h2 class="section-title">
+                        Dự Án & Nghiên Cứu Bảo Mật
+                        <span class="title-tag">Projects & CTFs</span>
+                    </h2>
+                </div>
+                <p class="section-sub">Các dự án lập trình, công cụ phân tích bảo mật và tài liệu kỹ thuật đã triển khai.</p>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div>
+                        <div class="project-top">
+                            <div class="project-icon-box">
+                                <i class="fa-solid fa-satellite-dish"></i>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/quochuyph" target="_blank" rel="noopener noreferrer" class="project-link-btn" title="View Source on GitHub">
+                                    <i class="fa-brands fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <h3 class="project-title">Network Packet Sniffer & Analyzer</h3>
+                        <p class="project-desc">
+                            Công cụ bắt và phân tích gói tin mạng theo thời gian thực viết bằng Python & Scapy. Hỗ trợ bóc tách headers TCP/UDP/IP, phát hiện quét cổng bất thường (SYN Scan) và lưu log pcap.
+                        </p>
+                    </div>
+                    <div class="project-tags">
+                        <span class="project-tag">Python</span>
+                        <span class="project-tag">Scapy</span>
+                        <span class="project-tag">Socket Programming</span>
+                        <span class="project-tag">Network Security</span>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div>
+                        <div class="project-top">
+                            <div class="project-icon-box">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/quochuyph" target="_blank" rel="noopener noreferrer" class="project-link-btn" title="View Source on GitHub">
+                                    <i class="fa-brands fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <h3 class="project-title">Automated Web Vulnerability Scanner</h3>
+                        <p class="project-desc">
+                            Bộ công cụ tự động kiểm tra lỗ hổng bảo mật ứng dụng web theo tiêu chuẩn OWASP: XSS phản xạ, SQL Injection cơ bản, thiếu cấu hình bảo mật Security Headers (CSP, HSTS, X-Frame-Options).
+                        </p>
+                    </div>
+                    <div class="project-tags">
+                        <span class="project-tag">Python</span>
+                        <span class="project-tag">Requests</span>
+                        <span class="project-tag">OWASP Top 10</span>
+                        <span class="project-tag">Web Security</span>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div>
+                        <div class="project-top">
+                            <div class="project-icon-box">
+                                <i class="fa-solid fa-flag"></i>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/quochuyph" target="_blank" rel="noopener noreferrer" class="project-link-btn" title="View CTF Writeups">
+                                    <i class="fa-brands fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <h3 class="project-title">CTF Writeups & Security Lab Notes</h3>
+                        <p class="project-desc">
+                            Tổng hợp các bài phân tích (Writeup) và phương pháp khai thác các bài thi CTF mảng Web Exploitation, Digital Forensics, Cryptography trên nền tảng HackTheBox, TryHackMe và các giải CTF sinh viên.
+                        </p>
+                    </div>
+                    <div class="project-tags">
+                        <span class="project-tag">CTF</span>
+                        <span class="project-tag">Web Exploitation</span>
+                        <span class="project-tag">Cryptography</span>
+                        <span class="project-tag">Forensics</span>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card">
+                    <div>
+                        <div class="project-top">
+                            <div class="project-icon-box">
+                                <i class="fa-solid fa-microchip"></i>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/quochuyph" target="_blank" rel="noopener noreferrer" class="project-link-btn" title="View on GitHub">
+                                    <i class="fa-brands fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <h3 class="project-title">Reverse Engineering & Binary Analysis Lab</h3>
+                        <p class="project-desc">
+                            Môi trường thực hành dịch ngược mã nhị phân, phân tích tệp tin thực thi ELF/PE, tìm kiếm lỗ hổng tràn bộ đệm (Buffer Overflow) và phân tích luồng điều khiển với Ghidra và GDB.
+                        </p>
+                    </div>
+                    <div class="project-tags">
+                        <span class="project-tag">Reverse Engineering</span>
+                        <span class="project-tag">Ghidra</span>
+                        <span class="project-tag">C / Assembly</span>
+                        <span class="project-tag">Binary Exploitation</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- =================================================================
+             6. SOCIAL & BIO LINKS HUB
+             ================================================================= -->
+        <section class="glass-card">
+            <div class="section-header">
+                <div class="section-title-wrap">
+                    <div class="section-icon-badge">
+                        <i class="fa-solid fa-link"></i>
+                    </div>
+                    <h2 class="section-title">
+                        Trung Tâm Kết Nối & Mạng Xã Hội
+                        <span class="title-tag">Social Hub</span>
+                    </h2>
+                </div>
+                <p class="section-sub">Kết nối với mình qua các kênh mạng xã hội, hồ sơ kỹ thuật và liên hệ trực tiếp.</p>
+            </div>
+
+            <div class="social-links-grid">
+                <!-- GitHub -->
+                <a href="https://github.com/quochuyph" target="_blank" rel="noopener noreferrer" class="social-card card-github">
+                    <div class="social-card-left">
+                        <div class="social-icon-box icon-github">
+                            <i class="fa-brands fa-github"></i>
+                        </div>
+                        <div class="social-info">
+                            <h4>GitHub <i class="fa-solid fa-circle-check" style="font-size:0.75rem; color:var(--accent-cyan);"></i></h4>
+                            <p>github.com/quochuyph</p>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-chevron-right social-arrow"></i>
+                </a>
+
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/williamtran207/" target="_blank" rel="noopener noreferrer" class="social-card card-linkedin">
+                    <div class="social-card-left">
+                        <div class="social-icon-box icon-linkedin">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </div>
+                        <div class="social-info">
+                            <h4>LinkedIn</h4>
+                            <p>in/williamtran207</p>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-chevron-right social-arrow"></i>
+                </a>
+
+                <!-- Facebook -->
+                <a href="https://www.facebook.com/quoc.huy.tran.2007/" target="_blank" rel="noopener noreferrer" class="social-card card-facebook">
+                    <div class="social-card-left">
+                        <div class="social-icon-box icon-facebook">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </div>
+                        <div class="social-info">
+                            <h4>Facebook</h4>
+                            <p>quoc.huy.tran.2007</p>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-chevron-right social-arrow"></i>
+                </a>
+
+                <!-- Zalo -->
+                <a href="https://zalo.me/0858070207/" target="_blank" rel="noopener noreferrer" class="social-card card-zalo">
+                    <div class="social-card-left">
+                        <div class="social-icon-box icon-zalo">
+                            <i class="fa-solid fa-comment-dots"></i>
+                        </div>
+                        <div class="social-info">
+                            <h4>Zalo Chat</h4>
+                            <p>0858070207</p>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-chevron-right social-arrow"></i>
+                </a>
+
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/quochuyph207/" target="_blank" rel="noopener noreferrer" class="social-card card-instagram">
+                    <div class="social-card-left">
+                        <div class="social-icon-box icon-instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </div>
+                        <div class="social-info">
+                            <h4>Instagram</h4>
+                            <p>@quochuyph207</p>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-chevron-right social-arrow"></i>
+                </a>
+
+
+                <!-- Email Direct & Copy -->
+                <div class="social-card card-email">
+                    <div class="social-card-left">
+                        <div class="social-icon-box icon-email">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div class="social-info">
+                            <h4>Email Trực Tiếp</h4>
+                            <p>quochuyphbrvt@gmail.com</p>
+                        </div>
+                    </div>
+                    <button class="copy-badge-btn" data-copy="quochuyphbrvt@gmail.com" data-copy-label="Email">
+                        <i class="fa-solid fa-copy"></i> Copy
+                    </button>
+                </div>
+
+                <!-- Phone Direct & Copy -->
+                <div class="social-card card-email">
+                    <div class="social-card-left">
+                        <div class="social-icon-box icon-email" style="color:var(--accent-blue);">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div class="social-info">
+                            <h4>Số Điện Thoại / Hotline</h4>
+                            <p>0858070207</p>
+                        </div>
+                    </div>
+                    <button class="copy-badge-btn" data-copy="0858070207" data-copy-label="Số điện thoại">
+                        <i class="fa-solid fa-copy"></i> Copy
+                    </button>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- =================================================================
+             7. FOOTER
+             ================================================================= -->
+        <footer class="site-footer">
+            <div class="footer-sec-badge">
+                <i class="fa-solid fa-shield-check"></i>
+                <span>HCMUTE Cybersecurity • Securing the Digital Frontier</span>
+            </div>
+            <p>© 2026 Crafted by <b>Trần Quốc Huy</b> (@quochuyph / williamtran207). All rights reserved.</p>
+            <div class="footer-links" style="font-family:var(--font-mono); font-size:0.75rem;">
+                <span>SHA256: 9b2d83...10b981</span> • <a href="#" data-modal-target="pgp-modal">PGP Key</a> • <a href="https://github.com/quochuyph" target="_blank">Source</a>
+            </div>
+        </footer>
 
     </div>
 
 
-
-    <main class="main">
-
-
-
-        <!-- Header Image -->
-
-        <div class="header-image">
-
-            <div class="js-parallax" style="background-image: url(https://i.pinimg.com/originals/78/f4/f1/78f4f1eb260f437115c640a4aeb58c29.jpg);"></div>
-
-        </div>
-
-        
-
-        <div class="container gutter-top ">
-
-            <!-- Header -->
-
-            <header class="header box">
-
-                <div class="header__left">
-
-                    <div class="header__photo">
-
-                        <img class="header__photo-img" src="./img/avatar.jpg" alt="Ngọc Hiếu">
-
-                    </div>
-
-                    <div class="header__base-info">
-
-                        <h2 class="title titl--h1"><b>Trần Quốc Huy</b></h2>
-
-                        <div class="skill-item" style="color: #EF9D64;"><b>Student</b></div>
-
-                        <ul class="header__social">
-
-                            <li>
-
-                                <a href="https://www.facebook.com/quoc.huy.tran.2007/" target="_blank">
-
-                                    <span class="nav-link-icon mr-1">
-
-                                        <i class="icon-img"><img height="20" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Facebook-icon-1.png/640px-Facebook-icon-1.png"></i>
-
-                                    </span>
-
-                                </a>
-
-                            </li>
-
-                            <li>
-
-                                <a href="https://zalo.me/0858070207/" target="_blank">
-
-                                    <span class="nav-link-icon mr-1">
-
-                                        <i class="icon-img">
-
-                                            <img height="20" src="./img/zalo.png">
-
-                                        </i>
-
-                                    </span>
-
-                                </a>
-
-                            </li>
-
-                        </ul>
-
-                    </div>
-
+    <!-- =================================================================
+         8. PGP / SECURITY KEY MODAL
+         ================================================================= -->
+    <div class="modal-overlay" id="pgp-modal">
+        <div class="modal-card">
+            <div class="modal-header">
+                <div class="modal-title">
+                    <i class="fa-solid fa-key" style="color:var(--accent-cyan);"></i>
+                    <span>Khóa Bảo Mật Công Khai (PGP Key)</span>
                 </div>
-
-                <div class="header__right">
-
-                    <ul class="header__contact">
-
-                        <li><span class="overhead"><i class="icon-img"><img height="25" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Circle-icons-mail.svg/1200px-Circle-icons-mail.svg.png"></i></span>
-
-                            <a href="mailto:quochuyphbrvt@gmail.com" target="_blank">
-
-                                <font color="white"><b>quochuyphbrvt@gmail.com</b></font>
-
-                            </a>
-
-                        </li>
-
-                        <li><span class="overhead"><i class="icon-img"><img height="25" src="https://cdn-icons-png.flaticon.com/128/901/901141.png"></i></span>
-
-                            <a href="tel:0858070207" target="_blank">
-
-                                <font color="white"><b>0858070207</b></font>
-
-                            </a>
-
-                        </li>
-
-                    </ul>
-
-                </div>
-
-            </header>
-
-
-
-            <div class="row sticky-parent">
-
-                <!-- Sidebar nav -->
-
-
-
-                <!-- Content -->
-
-                <div class="col-12">
-
-                    <div class="box box-content">
-
-
-
-
-
-                        <!-- What -->
-
-                        <div class="mt-1">
-
-
-
-                            <h3 class="title title--h2 first-title title__separate">Mạng Xã Hội</h3>
-
-                            <div class="row">
-
-                                <!-- Case Item -->
-
-                                <div class="col-12 col-lg-6">
-
-                                    <div class="case-item">
-
-                                        <i class="icon-img"><img height="55" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Facebook-icon-1.png/640px-Facebook-icon-1.png"></i>
-
-                                        <div>&nbsp;
-
-                                            <h4 class="title title--h4">Facebook</h4>
-
-                                            <p><b>Trần Quốc Huy</b><br></p>
-
-                                            <button style="height:30px;width:180px;text-align: center;" class="btn btn-primary"><a href="https://www.facebook.com/quoc.huy.tran.2007/" style="color: white;" target="_blank">Tới Trang Facebook</a></button>
-
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-
-
-                                <!-- Case Item -->
-
-                                <div class="col-12 col-lg-6">
-
-                                    <div class="case-item">
-
-                                        <img height="55" src="./img/zalo.png">
-
-                                        <div>&nbsp;
-
-                                            <h4 class="title title--h4">Zalo</h4>
-
-                                            <p><b>Trần Quốc Huy</b><br></p>
-
-                                            <button style="height:30px;width:180px;text-align: center;" class="btn btn-primary"><a href="https://zalo.me/0858070207/" style="color: white;" target="_blank">Tới Trang Zalo</a></button>
-
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-
-
-                                <!-- Case Item -->
-
-                                <div class="col-12 col-lg-6">
-
-                                    <div class="case-item">
-
-                                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Instagram-Icon.png/800px-Instagram-Icon.png" height="55"/>
-
-                                        <div>&nbsp;
-
-                                            <h4 class="title title--h4">Instagram</h4>
-
-                                            <p><b>Trần Quốc Huy</b><br></p>
-
-                                            <button style="height:30px;width:180px;text-align: center;" class="btn btn-primary"><a href="https://www.instagram.com/quochuyph207/" style="color: white;"target="_blank">Tới Trang Instagram</a></button>
-
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-
-
-                                <!-- Case Item -->
-
-                                <div class="col-12 col-lg-6">
-
-                                    <div class="case-item">
-
-                                        <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png?w=360" height="55" />
-
-                                        <div>&nbsp;
-
-                                            <h4 class="title title--h4">GitHub</h4>
-
-                                            <p><b>williamtran207</b><br></p>
-
-                                            <button style="height:30px;width:180px;text-align: center;" class="btn btn-primary"><a href="https://github.com/quochuyph" style="color: white;"target="_blank">Tới Trang GitHub</a></button>
-
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-                                <!-- Case Item -->
-
-                                <div class="col-12 col-lg-6">
-
-                                    <div class="case-item">
-
-                                        <img src="https://cdn-icons-png.flaticon.com/512/4096/4096186.png" height="55" />
-
-                                        <div>&nbsp;
-
-                                            <h4 class="title title--h4">LinkedIn</h4>
-
-                                            <p><b>williamtran207</b><br></p>
-
-                                            <button style="height:30px;width:180px;text-align: center;" class="btn btn-primary"><a href="https://www.linkedin.com/in/williamtran207/" style="color: white;"target="_blank">Tới Trang LinkedIn</a></button>
-
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                            <center>
-
-                                <a style="color:#fff;" href="https://phattriennanglucso.com/" target="_blank">Ghé Thăm Website</a>
-
-
-
-                            </center>
-
-                        </div>
-
-
-
-                        <!-- Clients -->
-
-
-
-                    </div>
-
-
-
-                    <script>
-
-                        function geturl(giatri) {
-
-                            var $temp = $("<input>");
-
-                            $("body").append($temp);
-
-                            $temp.val(giatri).select();
-
-                            document.execCommand("copy");
-
-                            $temp.remove();
-
-                            alert("Copy Thành Công");
-
-                        }
-
-                    </script>
-
-
-
-                    <!-- Footer -->
-
-                    <footer class="footer">© 2024 Coded By <a href="https://www.facebook.com/quoc.huy.tran.2007/">Quoc Huy</a></footer>
-
-
-
-
-
-                </div>
-
+                <button class="modal-close-btn" data-modal-close>
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
             </div>
+            <div class="modal-body">
+                <p style="font-size:0.9rem; color:var(--text-secondary); margin-bottom:10px;">
+                    Sử dụng khóa PGP công khai này để mã hóa thông điệp nhạy cảm hoặc xác thực chữ ký số khi liên hệ với mình.
+                </p>
+                <div style="font-family:var(--font-mono); font-size:0.8rem; color:var(--text-muted);">
+                    <div><b>Fingerprint:</b> 8F2A 4C91 03B7 E12D 9940 72CA 401F 98C1 A23B E709</div>
+                    <div><b>UID:</b> Tran Quoc Huy &lt;quochuyphbrvt@gmail.com&gt;</div>
+                    <div><b>Algorithm:</b> RSA 4096 / Curve25519</div>
+                </div>
+                <div class="code-block-wrap">
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+Version: OpenPGP.js v4.10.10
+Comment: https://openpgpjs.org
 
+mQGNBF+q7yIBDADnJ9Y4V28vJk9p8z0Q3x4...
+[TRAN QUOC HUY - HCMUTE INFORMATION SECURITY PGP PUBLIC KEY]
+...8F2A4C9103B7E12D994072CA401F98C1A23BE709...
+-----END PGP PUBLIC KEY BLOCK-----
+                </div>
+                <div style="margin-top:16px; display:flex; justify-content:flex-end;">
+                    <button class="btn btn-primary" data-copy="8F2A 4C91 03B7 E12D 9940 72CA 401F 98C1 A23B E709" data-copy-label="PGP Fingerprint">
+                        <i class="fa-solid fa-copy"></i> Sao Chép Fingerprint
+                    </button>
+                </div>
+            </div>
         </div>
-
-    </main>
-
+    </div>
 
 
+    <!-- =================================================================
+         9. FLOATING CONTROLS
+         ================================================================= -->
+    <div class="floating-controls">
+        <button class="floating-btn" id="back-to-top-btn" title="Cuộn lên đầu trang" style="opacity: 0; pointer-events: none;">
+            <i class="fa-solid fa-arrow-up"></i>
+        </button>
+    </div>
 
-
-    <!-- SVG masks -->
-
-    <svg class="svg-defs">
-
-        <clippath id="avatar-box">
-
-            <path d="M1.85379 38.4859C2.9221 18.6653 18.6653 2.92275 38.4858 1.85453 56.0986.905299 77.2792 0 94 0c16.721 0 37.901.905299 55.514 1.85453 19.821 1.06822 35.564 16.81077 36.632 36.63137C187.095 56.0922 188 77.267 188 94c0 16.733-.905 37.908-1.854 55.514-1.068 19.821-16.811 35.563-36.632 36.631C131.901 187.095 110.721 188 94 188c-16.7208 0-37.9014-.905-55.5142-1.855-19.8205-1.068-35.5637-16.81-36.63201-36.631C.904831 131.908 0 110.733 0 94c0-16.733.904831-37.9078 1.85379-55.5141z"></path>
-
-        </clippath>
-
-        <clippath id="avatar-hexagon">
-
-            <path d="M0 27.2891c0-4.6662 2.4889-8.976 6.52491-11.2986L31.308 1.72845c3.98-2.290382 8.8697-2.305446 12.8637-.03963l25.234 14.31558C73.4807 18.3162 76 22.6478 76 27.3426V56.684c0 4.6805-2.5041 9.0013-6.5597 11.3186L44.4317 82.2915c-3.9869 2.278-8.8765 2.278-12.8634 0L6.55974 68.0026C2.50414 65.6853 0 61.3645 0 56.684V27.2891z"></path>
-
-        </clippath>   
-
-    </svg>
-
-
-
-    <div class="back-to-top"></div>
-
-
-
-
-
-
-
-    <!-- JavaScripts -->
-
-    <script data-cfasync="false" src="email.min.js"></script>
-
-    <script src="assets/js/jquery-3.4.1.min.js"></script>
-
-    <script src="assets/js/plugins.min.js"></script>
-
-    <script src="assets/js/common.js"></script>
-
-
-
-    <script src="assets/demo/plugins-demo.js"></script>
-
+    <!-- Core Scripts -->
+    <script src="assets/js/cyber-core.js"></script>
 </body>
 
-
-
 </html>
-
