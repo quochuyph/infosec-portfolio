@@ -31,6 +31,11 @@
 </head>
 
 <body>
+    <!-- Top Cyber Scroll Progress Bar -->
+    <div class="scroll-progress-container" aria-hidden="true">
+        <div class="scroll-progress-bar" id="scroll-progress-bar"></div>
+    </div>
+
     <!-- Background Ambient Effects & Interactive Canvas -->
     <canvas id="cyber-canvas"></canvas>
     <div class="ambient-glow-1"></div>
@@ -77,14 +82,11 @@
 
                     <!-- Quick Action Buttons -->
                     <div class="hero-actions">
-                        <a href="mailto:quochuyphbrvt@gmail.com" class="btn btn-primary">
+                        <a href="#contact-section" class="btn btn-primary">
                             <i class="fa-solid fa-paper-plane"></i> Liên Hệ Trực Tiếp
                         </a>
                         <button class="btn btn-glass" data-copy="quochuyphbrvt@gmail.com" data-copy-label="Email">
                             <i class="fa-solid fa-copy"></i> Copy Email
-                        </button>
-                        <button class="btn btn-glass" data-modal-target="pgp-modal">
-                            <i class="fa-solid fa-key"></i> Khóa PGP / Key
                         </button>
                         <a href="https://github.com/quochuyph" target="_blank" rel="noopener noreferrer" class="btn btn-glass">
                             <i class="fa-brands fa-github"></i> GitHub
@@ -141,7 +143,6 @@
                 <button class="quick-chip" data-cmd="skills">skills</button>
                 <button class="quick-chip" data-cmd="projects">projects</button>
                 <button class="quick-chip" data-cmd="contact">contact</button>
-                <button class="quick-chip" data-cmd="pgp">pgp</button>
                 <button class="quick-chip" data-cmd="matrix">matrix</button>
                 <button class="quick-chip" data-cmd="help">help</button>
             </div>
@@ -527,7 +528,7 @@
         <!-- =================================================================
              6. SOCIAL & BIO LINKS HUB
              ================================================================= -->
-        <section class="glass-card">
+        <section class="glass-card" id="contact-section">
             <div class="section-header">
                 <div class="section-title-wrap">
                     <div class="section-icon-badge">
@@ -658,7 +659,7 @@
             </div>
             <p>© 2026 Crafted by <b>Trần Quốc Huy</b> (@quochuyph / williamtran207). All rights reserved.</p>
             <div class="footer-links" style="font-family:var(--font-mono); font-size:0.75rem;">
-                <span>SHA256: 9b2d83...10b981</span> • <a href="#" data-modal-target="pgp-modal">PGP Key</a> • <a href="https://github.com/quochuyph" target="_blank">Source</a>
+                <a href="https://github.com/quochuyph/infosec-portfolio" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> Mã Nguồn Trang (GitHub)</a>
             </div>
         </footer>
 
@@ -666,53 +667,14 @@
 
 
     <!-- =================================================================
-         8. PGP / SECURITY KEY MODAL
-         ================================================================= -->
-    <div class="modal-overlay" id="pgp-modal">
-        <div class="modal-card">
-            <div class="modal-header">
-                <div class="modal-title">
-                    <i class="fa-solid fa-key" style="color:var(--accent-cyan);"></i>
-                    <span>Khóa Bảo Mật Công Khai (PGP Key)</span>
-                </div>
-                <button class="modal-close-btn" data-modal-close>
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-            </div>
-            <div class="modal-body">
-                <p style="font-size:0.9rem; color:var(--text-secondary); margin-bottom:10px;">
-                    Sử dụng khóa PGP công khai này để mã hóa thông điệp nhạy cảm hoặc xác thực chữ ký số khi liên hệ với mình.
-                </p>
-                <div style="font-family:var(--font-mono); font-size:0.8rem; color:var(--text-muted);">
-                    <div><b>Fingerprint:</b> 8F2A 4C91 03B7 E12D 9940 72CA 401F 98C1 A23B E709</div>
-                    <div><b>UID:</b> Tran Quoc Huy &lt;quochuyphbrvt@gmail.com&gt;</div>
-                    <div><b>Algorithm:</b> RSA 4096 / Curve25519</div>
-                </div>
-                <div class="code-block-wrap">
------BEGIN PGP PUBLIC KEY BLOCK-----
-Version: OpenPGP.js v4.10.10
-Comment: https://openpgpjs.org
-
-mQGNBF+q7yIBDADnJ9Y4V28vJk9p8z0Q3x4...
-[TRAN QUOC HUY - HCM-UTE INFORMATION SECURITY PGP PUBLIC KEY]
-...8F2A4C9103B7E12D994072CA401F98C1A23BE709...
------END PGP PUBLIC KEY BLOCK-----
-                </div>
-                <div style="margin-top:16px; display:flex; justify-content:flex-end;">
-                    <button class="btn btn-primary" data-copy="8F2A 4C91 03B7 E12D 9940 72CA 401F 98C1 A23B E709" data-copy-label="PGP Fingerprint">
-                        <i class="fa-solid fa-copy"></i> Sao Chép Fingerprint
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- =================================================================
-         9. FLOATING CONTROLS
+         8. FLOATING CONTROLS & BACK TO TOP
          ================================================================= -->
     <div class="floating-controls">
-        <button class="floating-btn" id="back-to-top-btn" title="Cuộn lên đầu trang" style="opacity: 0; pointer-events: none;">
+        <button class="floating-btn" id="back-to-top-btn" title="Cuộn lên đầu trang" aria-label="Cuộn lên đầu trang">
+            <svg class="progress-ring" width="44" height="44" viewBox="0 0 44 44">
+                <circle class="progress-ring-bg" stroke-width="2.5" fill="transparent" r="18" cx="22" cy="22"/>
+                <circle class="progress-ring-circle" id="scroll-progress-circle" stroke="var(--accent-cyan)" stroke-width="2.5" stroke-linecap="round" fill="transparent" r="18" cx="22" cy="22"/>
+            </svg>
             <i class="fa-solid fa-arrow-up"></i>
         </button>
     </div>

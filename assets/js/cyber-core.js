@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCyberTerminal();
   initCopyButtons();
   initModalHandler();
-  initBackToTop();
+  initScrollEffects();
 });
 
 /* ==========================================================================
@@ -167,7 +167,6 @@ function initCyberTerminal() {
   • <span class="cyan">skills</span>     : Cybersecurity & technical skill matrix
   • <span class="cyan">projects</span>   : Key projects & security research
   • <span class="cyan">contact</span>    : Social channels & email/phone
-  • <span class="cyan">pgp</span>        : Show public security key fingerprint
   • <span class="cyan">matrix</span>     : Run visual matrix stream
   • <span class="cyan">clear</span>      : Clear the terminal screen
   • <span class="cyan">date</span>       : Output current timestamp`,
@@ -215,12 +214,6 @@ function initCyberTerminal() {
 • LinkedIn : <a href="https://www.linkedin.com/in/williamtran207/" target="_blank" class="cyan">linkedin.com/in/williamtran207</a>
 • Facebook : <a href="https://www.facebook.com/quoc.huy.tran.2007/" target="_blank" class="cyan">facebook.com/quoc.huy.tran.2007</a>
 • Zalo     : <a href="https://zalo.me/0858070207/" target="_blank" class="cyan">zalo.me/0858070207</a>`,
-
-    pgp: () => `🔑 <span class="cyan">PGP KEY FINGERPRINT</span>
---------------------------------------------------
-Fingerprint: 8F2A 4C91 03B7 E12D 9940  72CA 401F 98C1 A23B E709
-Algorithm  : RSA 4096 / Curve25519
-Status     : Valid & Active`,
 
     date: () => `🕒 ${new Date().toString()}`,
 
@@ -390,7 +383,7 @@ function initCopyButtons() {
 }
 
 /* ==========================================================================
-   5. MODAL MANAGEMENT (PGP / SECURITY DETAILS)
+   5. MODAL MANAGEMENT
    ========================================================================== */
 function initModalHandler() {
   const openBtns = document.querySelectorAll('[data-modal-target]');
@@ -438,24 +431,165 @@ function initModalHandler() {
 }
 
 /* ==========================================================================
-   6. BACK TO TOP & SMOOTH SCROLL
+   6. SCROLL ENGINE (PROGRESS BAR, REVEAL ANIMATIONS & PARALLAX)
    ========================================================================== */
-function initBackToTop() {
-  const btn = document.getElementById('back-to-top-btn');
-  if (!btn) return;
+function initScrollEffects() {
+  const progressBar = document.getElementById('scroll-progress-bar');
+  const progressCircle = document.getElementById('scroll-progress-circle');
+  const backToTopBtn = document.getElementById('back-to-top-btn');
+  const glow1 = document.querySelector('.ambient-glow-1');
+  const glow2 = document.querySelector('.ambient-glow-2');
+  const circleCircumference = 113.097; // 2 * PI * 18
+
+  // 1. SCROLL PROGRESS & BACK-TO-TOP HANDLER
+  let ticking = false;
+  function handleScroll() {
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = docHeight > 0 ? Math.min(100, Math.max(0, (scrollTop / docHeight) * 100)) : 0;
+
+    // Update Top Neon Bar
+    if (progressBar) {
+      progressBar.style.width = `${scrollPercent}%`;
+    }
+
+    // Update Circular Ring on Floating Button
+    if (progressCircle) {
+      const offset = circleCircumference - (circleCircumference * scrollPercent) / 100;
+      progressCircle.style.strokeDashoffset = offset;
+    }
+
+    // Toggle Back-To-Top Button
+    if (backToTopBtn) {
+      if (scrollTop > 220) {
+        backToTopBtn.classList.add('visible');
+      } else {
+        backToTopBtn.classList.remove('visible');
+      }
+    }
+
+    // Subtle Parallax for Ambient Glow
+    if (glow1 && glow2) {
+      glow1.style.transform = `translate3d(0, ${scrollTop * 0.12}px, 0)`;
+      glow2.style.transform = `translate3d(0, ${-scrollTop * 0.08}px, 0)`;
+    }
+
+    ticking = false;
+  }
 
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-      btn.style.opacity = '1';
-      btn.style.pointerEvents = 'auto';
-    } else {
-      btn.style.opacity = '0';
-      btn.style.pointerEvents = 'none';
+    if (!ticking) {
+      window.requestAnimationFrame(handleScroll);
+      ticking = true;
+    }
+  }, { passive: true });
+
+  // Initial trigger on load
+  handleScroll();
+
+  if (backToTopBtn) {
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  // Smooth scroll for internal anchor links (e.g. #contact-section)
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener('click', function (e) {
+      const targetId = this.getAttribute('href');
+      if (!targetId || targetId === '#') return;
+      const targetEl = document.querySelector(targetId);
+      if (targetEl) {
+        e.preventDefault();
+        targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // Highlight section with active glow
+        document.querySelectorAll('.glass-card').forEach((card) => card.classList.remove('is-active-section'));
+        targetEl.classList.add('is-active-section');
+      }
+    });
+  });
+
+  // 2. SCROLL REVEAL VIA INTERSECTION OBSERVER
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Primary blocks to reveal
+  const revealTargets = [
+    'header.hero-card',
+    'section.terminal-card',
+    'section.glass-card',
+    'footer.site-footer'
+  ];
+
+  const mainElements = document.querySelectorAll(revealTargets.join(', '));
+  mainElements.forEach((el) => {
+    el.classList.add('reveal-on-scroll');
+  });
+
+  // Stagger child elements in grids
+  const staggeredContainers = [
+    { selector: '.skills-grid', childSelector: '.skill-category-card', step: 60 },
+    { selector: '.research-topics-grid', childSelector: '.research-topic-card', step: 80 },
+    { selector: '.social-links-grid, .social-grid', childSelector: '.social-card', step: 60 }
+  ];
+
+  staggeredContainers.forEach(({ selector, childSelector, step }) => {
+    const container = document.querySelector(selector);
+    if (container) {
+      const children = container.querySelectorAll(childSelector);
+      children.forEach((child, idx) => {
+        child.classList.add('reveal-on-scroll');
+        if (!prefersReducedMotion) {
+          child.style.transitionDelay = `${idx * step}ms`;
+        }
+      });
     }
   });
 
-  btn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+  if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+    document.querySelectorAll('.reveal-on-scroll').forEach((el) => {
+      el.classList.add('is-revealed');
+    });
+    return;
+  }
+
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-revealed');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.05,
+    rootMargin: '0px 0px -40px 0px'
+  });
+
+  document.querySelectorAll('.reveal-on-scroll').forEach((el) => {
+    // If element is already in the viewport upon load, reveal immediately
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      el.classList.add('is-revealed');
+    } else {
+      revealObserver.observe(el);
+    }
+  });
+
+  // 3. ACTIVE SECTION GLOW HIGHLIGHT
+  const activeSectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        document.querySelectorAll('.glass-card').forEach((card) => {
+          card.classList.remove('is-active-section');
+        });
+        entry.target.classList.add('is-active-section');
+      }
+    });
+  }, {
+    threshold: 0.35
+  });
+
+  document.querySelectorAll('section.glass-card').forEach((sec) => {
+    activeSectionObserver.observe(sec);
   });
 }
 
